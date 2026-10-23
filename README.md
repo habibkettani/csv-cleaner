@@ -1,6 +1,6 @@
 # csv-cleaner
 
-Small tool to clean CSV files.
+Command-line tool that cleans messy CSV files: empty rows, extra spaces, duplicates.
 
 ## Usage
 
