@@ -1,6 +1,6 @@
 # csv-cleaner
 
-Small tool to clean CSV files.
+Clean CSV files in one command.
 
 ## Usage
 
