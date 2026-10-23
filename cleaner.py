@@ -35,16 +35,17 @@ def remove_duplicates(rows):
     return unique
 
 
+def normalize_city(rows):
+    return [{**row, "city": row["city"].title()} for row in rows]
+
+
 def clean(rows):
     rows = drop_empty_rows(rows)
     rows = strip_whitespace(rows)
+    rows = normalize_city(rows)
     return remove_duplicates(rows)
 
 
 if __name__ == "__main__":
     input_path, output_path = sys.argv[1], sys.argv[2]
     write_rows(clean(read_rows(input_path)), output_path)
-
-
-def normalize_city(rows):
-    return [{**row, "city": row["city"].title()} for row in rows]
