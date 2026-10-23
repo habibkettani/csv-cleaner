@@ -48,4 +48,6 @@ def clean(rows):
 
 if __name__ == "__main__":
     input_path, output_path = sys.argv[1], sys.argv[2]
-    write_rows(clean(read_rows(input_path)), output_path)
+    rows = clean(read_rows(input_path))
+    write_rows(rows, output_path)
+    print(f"{len(rows)} rows written to {output_path}")
