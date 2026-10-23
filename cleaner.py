@@ -21,3 +21,14 @@ def drop_empty_rows(rows):
 
 def strip_whitespace(rows):
     return [{key: value.strip() for key, value in row.items()} for row in rows]
+
+
+def remove_duplicates(rows):
+    seen = set()
+    unique = []
+    for row in rows:
+        key = tuple(row.values())
+        if key not in seen:
+            seen.add(key)
+            unique.append(row)
+    return unique
